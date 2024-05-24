@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <!--  start createproduct -->
+    <div class="w-50 mx-auto shadow bg-light p-4">
+      <h2 class="">Product Management System</h2>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control border-0 border-bottom mt-5"
+          id="productName"
+          placeholder="Product Name"
+        />
+        <label for="productName">Product Name</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="number"
+          class="form-control border-0 border-bottom mt-5"
+          id="productPrice"
+          placeholder="Product price"
+        />
+        <label for="productPrice">Product price</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="text"
+          class="form-control border-0 border-bottom mt-5"
+          id="productcategory"
+          placeholder="Product category"
+          list="categories"
+        />
+        <label for="productcategory">Product category</label>
+        <datalist id="categories">
+          <option value="mobile"></option>
+          <option value="tv"></option>
+          <option value="laptop"></option>
+          <option value="electronics"></option>
+        </datalist>
+      </div>
+
+      <div class="form-floating mb-3">
+        <textarea
+          class="form-control border-0 border-bottom mt-5"
+          id="productDescribtion"
+          placeholder="Product describtion"
+        ></textarea>
+        <label for="productDescribtion">Product describtion</label>
+      </div>
+
+      <div class="form-floating mb-3">
+        <input
+          type="file"
+          multiple
+          accept="image/*"
+          class="form-control border-0 border-bottom mt-5"
+          id="productImg"
+          placeholder="Product image"
+          src="images/ben-garratt.jpg"
+        />
+        <label for="productImg">Product price</label>
+      </div>
+
+      <button class="btn btn-outline-primary btn-lg" onclick="createproduct()">
+        Add Product
+      </button>
+          <!-- start displayProducts -->
+    <table class="table">
+      <thead>
+        <tr>
+          <td>name </td>
+          <td> price</td>
+          <td>category</td>
+          <td>describtion</td>
+          <td>image</td>
+        </tr>
+      </thead>
+      <tbody id="data">
+      </tbody>
+      
+          </table>
+      
+          <!-- end displayProducts -->
+      
+    </div>
+    <!-- end createproduct -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>

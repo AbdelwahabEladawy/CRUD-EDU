@@ -4,7 +4,11 @@ var productcategory = document.getElementById("productcategory");
 var productDescribtion = document.getElementById("productDescribtion");
 var productImg = document.getElementById("productImg");
 var productlist = [];
-// start createproduct
+if ("list" !== null) {
+  productlist = JSON.parse(localStorage.getItem("list"));
+  displayProducts(productlist);
+}
+
 function createproduct() {
   var products = {
     name: productName.value,
@@ -16,13 +20,13 @@ function createproduct() {
   productlist.push(products);
 
   displayProducts(productlist);
+  localStorage.setItem("list", JSON.stringify(productlist));
+  clearForm();
 }
-
-// end createproduct
 
 function displayProducts(list) {
   var container = "";
-  for (var i = 0 ; i < list.length ; i++) {
+  for (var i = 0; i < list.length; i++) {
     container += `<tr>
         <td>${list[i].name}</td>
         <td>${list[i].price}</td>
@@ -30,11 +34,14 @@ function displayProducts(list) {
         <td>${list[i].describtion}</td>
         <td><img src="images/ben-garratt.jpg" alt=${list[i].name}></td>
       </tr>`;
-
-    }
-    document.getElementById("data").innerHTML = container;
+  }
+  document.getElementById("data").innerHTML = container;
 }
 
-
-
-
+function clearForm() {
+  productName.value = "";
+  productPrice.value = "";
+  productcategory.value = "";
+  productDescribtion.value = "";
+  // productImg=
+}

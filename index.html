@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CRUD</title>
+    <link rel="stylesheet" href="css/all.min.css">
     <link rel="stylesheet" href="css/bootstrap.min.css" />
     <link rel="stylesheet" href="css/main.css" />
   </head>
@@ -71,21 +72,24 @@
         <label for="productImg">Product price</label>
       </div>
 
-      <button class="btn btn-outline-primary btn-lg" onclick="createproduct()">
+      <button class="btn btn-outline-primary btn-lg mb-3" onclick="createproduct()">
         Add Product
       </button>
           <!-- start displayProducts -->
-    <table class="table">
+    <table class="table ">
       <thead>
-        <tr>
-          <td>name </td>
-          <td> price</td>
-          <td>category</td>
-          <td>describtion</td>
-          <td>image</td>
+        <tr class="border-0 border-bottom ">
+          <td class="border text-center">name </td>
+          <td class="border text-center"> price</td>
+          <td class="border text-center">category</td>
+          <td class="border text-center">describtion</td>
+          <td class="border text-center">image</td>
+          <td class="border text-center">Delete</td>
+          <td class="border text-center">Update</td>
         </tr>
       </thead>
-      <tbody id="data">
+      <tbody id="data" >
+
       </tbody>
       
           </table>

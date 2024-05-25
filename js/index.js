@@ -28,11 +28,13 @@ function displayProducts(list) {
   var container = "";
   for (var i = 0; i < list.length; i++) {
     container += `<tr>
-        <td>${list[i].name}</td>
-        <td>${list[i].price}</td>
-        <td>${list[i].category}</td>
-        <td>${list[i].describtion}</td>
-        <td><img src="images/ben-garratt.jpg" alt=${list[i].name}></td>
+        <td class="border text-center">${list[i].name}</td>
+        <td class="border text-center">${list[i].price}</td>
+        <td class="border text-center">${list[i].category}</td>
+        <td class="border text-center">${list[i].describtion}</td>
+        <td class="border text-center"><img src="images/ben-garratt.jpg" alt=${list[i].name}></td>
+        <td class="border text-center"><button class="btn btn-danger btn-sm "><i class="fa-solid fa-trash"></i>delete</button></td>
+        <td class="border text-center"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-edit"></i>update</button></td>
       </tr>`;
   }
   document.getElementById("data").innerHTML = container;

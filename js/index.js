@@ -33,7 +33,7 @@ function displayProducts(list) {
         <td class="border text-center">${list[i].category}</td>
         <td class="border text-center">${list[i].describtion}</td>
         <td class="border text-center"><img src="images/ben-garratt.jpg" alt=${list[i].name}></td>
-        <td class="border text-center"><button class="btn btn-danger btn-sm "><i class="fa-solid fa-trash"></i>delete</button></td>
+        <td class="border text-center"><button class="btn btn-danger btn-sm " onclick="deleteProduct(${i})"><i class="fa-solid fa-trash"></i>delete</button></td>
         <td class="border text-center"><button class="btn btn-warning btn-sm"><i class="fa-solid fa-edit"></i>update</button></td>
       </tr>`;
   }
@@ -46,4 +46,11 @@ function clearForm() {
   productcategory.value = "";
   productDescribtion.value = "";
   // productImg=
+}
+
+
+function deleteProduct(i){
+productlist.splice(i,1)
+displayProducts(productlist)
+localStorage.setItem("list", JSON.stringify(productlist));
 }
